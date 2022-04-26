@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/serco/Desktop/A Minha Universidade/P/Projeto/matdin.c
+matdin.h
+C:/Users/serco/Desktop/A Minha Universidade/P/Projeto/matdin.h
+
+C:/Users/serco/Desktop/A Minha Universidade/P/Projeto/matdin.h
+stdlib.h
+-
+stdio.h
+-
+
