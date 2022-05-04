@@ -4,16 +4,17 @@
 #ifndef STRUCTS_H
 #define STRUCTS_H
 
-#define BOARD_SIZE 11
+#include <stdlib.h>
+#include <stdio.h>
 
 typedef struct player{
-    char player1[30], player2[30];
+    char name[30];
+    int number;
 }Players;
 
 typedef struct allMoves moves, *pMoves;
 struct allMoves {
-    char letter;
-    int x,y;
+    int x,y,moveNumber;
     pMoves next;
 };
 

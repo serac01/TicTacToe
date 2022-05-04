@@ -8,7 +8,11 @@
 #include <string.h>
 #include <stdlib.h>
 #include "structs.h"
+#include "utils.h"
+#include "board.h"
 
-void start(Players *players);
+void start(Players players[]);
+
+void askForCoordinates(int *x, int *y, Players players[]);
 
 #endif /*INTERFACE_H*/

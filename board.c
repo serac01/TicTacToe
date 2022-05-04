@@ -1,4 +1,4 @@
-#include "matdin.h"
+#include "board.h"
 
 void freeBoard(char** p, int size){
     for(int i=0; i<size*size+(size-1); i++)
