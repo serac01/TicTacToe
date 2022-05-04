@@ -3,7 +3,7 @@
 
 #include "linkedList.h"
 
-pMoves newMove(pMoves move, char **board, int x, int y){
+pMoves newMove(pMoves move, char **board, int x, int y, int realX, int realY){
     pMoves new, aux=move;
 
     //Alocar memoria para conseguir guardar mais uma jogada
@@ -26,9 +26,9 @@ pMoves newMove(pMoves move, char **board, int x, int y){
 
     //Coloca na matriz a jogada que o utilizador pediu
     if(move!=NULL && new->moveNumber % 2 == 0)
-        setPos(board, x, y, 'X');
+        setPos(board, realX, realY, 'X');
     else
-        setPos(board, x, y, '0');
+        setPos(board, realX, realY, '0');
 
     //Se ainda não foi feita nenhuma jogada
     if(move == NULL) {
