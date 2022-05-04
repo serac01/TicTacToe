@@ -1,8 +1,8 @@
 // Trabalho Pratico Programacao - LEI
 // DEIS-ISEC 2021-2022
 
-#ifndef MATDIN_H
-#define MATDIN_H
+#ifndef BOARD_H
+#define BOARD_H
 
 #include <stdlib.h>
 #include <stdio.h>
@@ -23,4 +23,4 @@ void setPos(char **p, int x, int y, char c);
 //obtém o carácter armazenado na posição (x, y) da matriz dinâmica
 char getPos(char **p, int x, int y);
 
-#endif /* MATDIN_H */
+#endif

@@ -3,60 +3,41 @@
 
 #include "interface.h"
 #include "utils.h"
-#include "matdin.h"
+#include "board.h"
+#include "linkedList.h"
 
-pMoves newMove(pMoves move, int size, char **board, int x, int y){
-    pMoves new, aux;
-    char letter='X';
-
-    new = malloc(sizeof(moves));
-    if(new == NULL){
-        printf("\n\tMalloc failed");
-        return move;
+void showMeTheList(pMoves list){
+    printf("\n\n\n");
+    while(list->next!=NULL){
+        printf("\tX:%d Y:%d Number:%d\n",list->x,list->y,list->moveNumber);
+        list=list->next;
     }
-
-    setPos(board, x, y, 'X');
-
-    new->letter=letter;
-    new->x=x;
-    new->y=y;
-    new->next=NULL;
-
-    if(move == NULL)
-        move = new;
-    else{
-        aux = move;
-        while(aux->next != NULL)
-            aux = aux->next;
-        aux->next = new;
-    }
-    return move;
+    printf("\tX:%d Y:%d Number:%d\n",list->x,list->y,list->moveNumber);
 }
 
 int main() {
-    Players players;
+    Players players[2];
     pMoves moves=NULL;
     char **board;
     int x,y;
 
-    //Cria os dois jogadores (Humano e Humano/Computador)
-    start(&players);
-
-    //Sortear a probabilidade de quem começa primeiro (50% para cada)
+    //
     initRandom();
-    if(probEvento((float)0.5))
-        printf("\n\n\tThe player %s starts\n\n\n", players.player1);
-    else
-        printf("\n\n\tThe player %s starts\n\n", players.player2);
 
-    /*************************/
+    //Cria os dois jogadores (Humano e Humano/Computador)
+    start(players);
+
+    //Cria um tabuleiro com o tamanho redimensionar
     board = newBoard(SIZE);
-    showBoard(board,SIZE);
+
     do{
-        scanf("%d %d",&x,&y);
-        newMove(moves,SIZE,board,x,y);
-        showBoard(board,SIZE);
-    } while (1);
+        getLastMove(moves,&x,&y);
+        printf("\n\tCordenadas anterior: %d %d",x,y);
+        askForCoordinates(&x,&y,players);
+        moves=newMove(moves,board,x,y);
+        //showBoard(board,SIZE);
+        showMeTheList(moves);
+    }while(1);
 
     freeBoard(board,SIZE);
 

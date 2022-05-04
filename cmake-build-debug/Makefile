@@ -56,10 +56,10 @@ RM = "C:\Program Files\JetBrains\CLion 2021.1.1\bin\cmake\win\bin\cmake.exe" -E 
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = "C:\Users\serco\Desktop\A Minha Universidade\P\Projeto"
+CMAKE_SOURCE_DIR = "C:\Users\serco\Desktop\A Minha Universidade\P\TicTacToe"
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = "C:\Users\serco\Desktop\A Minha Universidade\P\Projeto\cmake-build-debug"
+CMAKE_BINARY_DIR = "C:\Users\serco\Desktop\A Minha Universidade\P\TicTacToe\cmake-build-debug"
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -86,9 +86,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\serco\Desktop\A Minha Universidade\P\Projeto\cmake-build-debug\CMakeFiles" "C:\Users\serco\Desktop\A Minha Universidade\P\Projeto\cmake-build-debug\\CMakeFiles\progress.marks"
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\serco\Desktop\A Minha Universidade\P\TicTacToe\cmake-build-debug\CMakeFiles" "C:\Users\serco\Desktop\A Minha Universidade\P\TicTacToe\cmake-build-debug\\CMakeFiles\progress.marks"
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\serco\Desktop\A Minha Universidade\P\Projeto\cmake-build-debug\CMakeFiles" 0
+	$(CMAKE_COMMAND) -E cmake_progress_start "C:\Users\serco\Desktop\A Minha Universidade\P\TicTacToe\cmake-build-debug\CMakeFiles" 0
 .PHONY : all
 
 # The main clean target
@@ -116,24 +116,48 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Projeto
+# Target rules for targets named TicTacToe
 
 # Build rule for target.
-Projeto: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 Projeto
-.PHONY : Projeto
+TicTacToe: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 TicTacToe
+.PHONY : TicTacToe
 
 # fast build rule for target.
-Projeto/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/build
-.PHONY : Projeto/fast
+TicTacToe/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/build
+.PHONY : TicTacToe/fast
+
+board.obj: board.c.obj
+.PHONY : board.obj
+
+# target to build an object file
+board.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/board.c.obj
+.PHONY : board.c.obj
+
+board.i: board.c.i
+.PHONY : board.i
+
+# target to preprocess a source file
+board.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/board.c.i
+.PHONY : board.c.i
+
+board.s: board.c.s
+.PHONY : board.s
+
+# target to generate assembly for a file
+board.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/board.c.s
+.PHONY : board.c.s
 
 interface.obj: interface.c.obj
 .PHONY : interface.obj
 
 # target to build an object file
 interface.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/interface.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/interface.c.obj
 .PHONY : interface.c.obj
 
 interface.i: interface.c.i
@@ -141,7 +165,7 @@ interface.i: interface.c.i
 
 # target to preprocess a source file
 interface.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/interface.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/interface.c.i
 .PHONY : interface.c.i
 
 interface.s: interface.c.s
@@ -149,15 +173,39 @@ interface.s: interface.c.s
 
 # target to generate assembly for a file
 interface.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/interface.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/interface.c.s
 .PHONY : interface.c.s
+
+linkedList.obj: linkedList.c.obj
+.PHONY : linkedList.obj
+
+# target to build an object file
+linkedList.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/linkedList.c.obj
+.PHONY : linkedList.c.obj
+
+linkedList.i: linkedList.c.i
+.PHONY : linkedList.i
+
+# target to preprocess a source file
+linkedList.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/linkedList.c.i
+.PHONY : linkedList.c.i
+
+linkedList.s: linkedList.c.s
+.PHONY : linkedList.s
+
+# target to generate assembly for a file
+linkedList.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/linkedList.c.s
+.PHONY : linkedList.c.s
 
 main.obj: main.c.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/main.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/main.c.obj
 .PHONY : main.c.obj
 
 main.i: main.c.i
@@ -165,7 +213,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/main.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -173,39 +221,15 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/main.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/main.c.s
 .PHONY : main.c.s
-
-matdin.obj: matdin.c.obj
-.PHONY : matdin.obj
-
-# target to build an object file
-matdin.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/matdin.c.obj
-.PHONY : matdin.c.obj
-
-matdin.i: matdin.c.i
-.PHONY : matdin.i
-
-# target to preprocess a source file
-matdin.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/matdin.c.i
-.PHONY : matdin.c.i
-
-matdin.s: matdin.c.s
-.PHONY : matdin.s
-
-# target to generate assembly for a file
-matdin.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/matdin.c.s
-.PHONY : matdin.c.s
 
 utils.obj: utils.c.obj
 .PHONY : utils.obj
 
 # target to build an object file
 utils.c.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/utils.c.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/utils.c.obj
 .PHONY : utils.c.obj
 
 utils.i: utils.c.i
@@ -213,7 +237,7 @@ utils.i: utils.c.i
 
 # target to preprocess a source file
 utils.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/utils.c.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/utils.c.i
 .PHONY : utils.c.i
 
 utils.s: utils.c.s
@@ -221,7 +245,7 @@ utils.s: utils.c.s
 
 # target to generate assembly for a file
 utils.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Projeto.dir\build.make CMakeFiles/Projeto.dir/utils.c.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/utils.c.s
 .PHONY : utils.c.s
 
 # Help Target
@@ -232,16 +256,19 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Projeto
+	@echo ... TicTacToe
+	@echo ... board.obj
+	@echo ... board.i
+	@echo ... board.s
 	@echo ... interface.obj
 	@echo ... interface.i
 	@echo ... interface.s
+	@echo ... linkedList.obj
+	@echo ... linkedList.i
+	@echo ... linkedList.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
-	@echo ... matdin.obj
-	@echo ... matdin.i
-	@echo ... matdin.s
 	@echo ... utils.obj
 	@echo ... utils.i
 	@echo ... utils.s
