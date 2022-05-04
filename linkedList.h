@@ -8,7 +8,7 @@
 #include "structs.h"
 
 //Guarda numa lista ligada a última jogada
-pMoves newMove(pMoves move, char **board, int x, int y);
+pMoves newMove(pMoves move, char **board, int x, int y, int realX, int realY);
 
 void getLastMove(pMoves move, int *x, int *y);
 
