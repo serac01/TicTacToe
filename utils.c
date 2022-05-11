@@ -1,8 +1,5 @@
-// Trabalho Pratico Programacao - LEI
-// DEIS-ISEC 2020-2021
-
-#include <stdlib.h>
-#include <time.h>
+// By: Sérgio Apolinário da Costa (a2020129026),
+// On: 09/04/2022
 
 #include "utils.h"
 

@@ -7,11 +7,13 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+//Estrutura do jogador
 typedef struct player{
     char name[30];
     int number;
 }Players;
 
+//Estrutura da jogada, usado nas listas ligadas
 typedef struct allMoves moves, *pMoves;
 struct allMoves {
     int x,y,moveNumber;

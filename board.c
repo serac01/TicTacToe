@@ -1,3 +1,6 @@
+// By: Sérgio Apolinário da Costa (a2020129026),
+// On: 09/04/2022
+
 #include "board.h"
 
 void freeBoard(char** p, int size){
@@ -22,15 +25,16 @@ char** newBoard(int size){
         }
     }
 
+    //inicializar o tabuleiro
     for(int i=0, aux=1; i<sizeAux; i++){
-        if(i == (size*aux+(aux-1))) { //Faz a linha completa
+        if(i == (size*aux+(aux-1))) { //Faz a linha da completa (borda horizontal)
             aux++;
             for (int j = 0; j < sizeAux; j++)
                 p[i][j] = (char)219;
         }
         else
             for(int j=0, auxJ=1; j<sizeAux; j++)
-                if(j == (size*auxJ+(auxJ-1))) { //Faz a coluna
+                if(j == (size*auxJ+(auxJ-1))) { //Faz a coluna (borda vertical)
                     p[i][j] = (char)219;
                     auxJ++;
                 }
@@ -45,10 +49,210 @@ void setPos(char **p, int x, int y, char c){ p[x][y] = c; }
 
 char getPos(char **p, int x, int y){ return p[x][y]; }
 
-void showBoard(char **p, int size){
-    for(int i=0; i<size*size+(size-1); i++){
-        printf("\n\t");
-        for(int j=0; j<size*size+(size-1); j++)
-            printf("%c ", p[i][j]);
+int confirmIfWon(char **p){
+    int count;
+    char bigBoard[SIZE][SIZE]={{' ',' ',' '},{' ',' ',' '},{' ',' ',' '}};
+
+    for(int i=0; i<SIZE; i++)
+        for(int j=0; j<SIZE; j++)
+            bigBoard[i][j]= confirmIfWonMiniBoard(p,i,j);
+
+    //Linha por linha
+    for(int i=0; i<SIZE; i++) {
+        count=0;
+        for (int j=0; j<SIZE; j++)
+            if (j+1 != SIZE && bigBoard[i][j] != ' ' && bigBoard[i][j]==bigBoard[i][j+1])
+                count++;
+        if(count==SIZE-1)
+            return 1;
     }
+
+    //Coluna por coluna
+    for(int i=0; i<SIZE; i++) {
+        count=0;
+        for (int j=0; j<SIZE; j++)
+            if (j+1 != SIZE && bigBoard[j][i] != ' ' && bigBoard[j][i] == bigBoard[j+1][i])
+                count++;
+        if(count==SIZE-1)
+            return 2;
+    }
+
+    //Diagonal principal
+    count=0;
+    for(int i=0; i<SIZE; i++) {
+        if (bigBoard[i][i] != ' ' && bigBoard[i][i] == bigBoard[i+1][i+1])
+            count++;
+        if(count==SIZE-1)
+            return 3;
+    }
+
+    //Diagonal secundária
+    for(int i=0, j=SIZE-1; i<SIZE; i++, j--) {
+        count=0;
+        if (bigBoard[i][j] != ' ' && bigBoard[i][j] == bigBoard[i+1][j-1])
+            count++;
+        if(count==SIZE-1)
+            return 4;
+    }
+
+    //Empate
+    count=0;
+    for(int i=0; i<SIZE; i++) {
+        for (int j=0; j<SIZE; j++)
+            if (bigBoard[i][j] != ' ')
+                count++;
+        if(count==SIZE*SIZE)
+            return 5;
+    }
+
+    return 0;
 }
+
+char confirmIfWonMiniBoard(char **p, int x, int y){
+    int initX=SIZE*x+x, initY=SIZE*y+y,auxInitY=initY+(SIZE-1),count;
+    char letter=' ';
+
+    //Linha por linha
+    for(int i=initX; i<initX+SIZE; i++) {
+        count=0;
+        for (int j=initY; j < initY+SIZE; j++)
+            if (j+1 != initY+SIZE && getPos(p,i,j) != '-' && getPos(p,i,j)==getPos(p,i,j+1)) {
+                count++;
+                letter=getPos(p,i,j);
+            }
+        if(count==SIZE-1)
+            return letter;
+    }
+
+    //Coluna por coluna
+    for(int i=initY; i<initY+SIZE; i++) {
+        count=0;
+        for (int j = initX; j < initX + SIZE; j++)
+            if (j + 1 != initX + SIZE && getPos(p, j, i) != '-' && getPos(p, j, i) == getPos(p,j+1,i)) {
+                count++;
+                letter=getPos(p, j, i);
+            }
+        if(count==SIZE-1)
+            return letter;
+    }
+
+    //Diagonal principal
+    count=0;
+    for(int i=0; i<SIZE; i++) {
+        if (getPos(p, initX, initY) != '-' && getPos(p, initX + i, initY + i) == getPos(p, initX + i + 1, initY + i + 1)) {
+            count++;
+            letter=getPos(p, initX + i, initY + i);
+        }
+        if(count==SIZE-1)
+            return letter;
+    }
+
+    //Diagonal secundária
+    count=0;
+    for(int i=0; i<SIZE; i++) {
+        if (getPos(p, initX, auxInitY) != '-' && getPos(p, initX+i, auxInitY-i) == getPos(p, initX+i+1, auxInitY-i-1)) {
+            count++;
+            letter=getPos(p, initX+i, auxInitY-i);
+        }
+        if(count==SIZE-1)
+            return letter;
+    }
+
+    //Empate
+    count=0;
+    for(int i=initX; i<initX+SIZE; i++) {
+        for (int j=initY; j < initY+SIZE; j++)
+            if (getPos(p,i,j) != '-')
+                count++;
+        if(count==SIZE*SIZE)
+            return '-';
+    }
+
+    return ' ';
+}
+
+/*void hackBoard(char **p){
+    //00
+    p[0][0] = '0';
+    p[0][1] = '0';
+    p[0][2] = '0';
+
+    //04
+    p[0][6] = 'X';
+    p[1][5] = 'X';
+    p[2][4] = 'X';
+
+    //08
+    p[0][8] = '0';
+    p[0][9] = '0';
+    p[0][10] = '0';
+    //40
+    p[4][0] = 'X';
+    p[5][1] = 'X';
+    p[6][2] = 'X';
+
+    //44
+    p[4][6] = '0';
+    p[5][5] = '0';
+    p[6][4] = '0';
+
+    //44
+    p[4][8] = '0';
+    p[5][9] = '0';
+    p[6][10] = '0';
+
+    //80
+    p[8][0] = '0';
+    p[8][1] = 'X';
+    p[8][2] = '0';
+    p[9][0] = '0';
+    p[9][1] = 'X';
+    p[9][2] = 'X';
+    p[10][0] = 'X';
+    p[10][1] = '0';
+    p[10][2] = 'X';
+
+    //84
+    p[8][4] = 'X';
+    p[9][4] = 'X';
+    p[10][4] = 'X';
+
+    //88
+    p[8][9] = 'X';
+    p[9][9] = 'X';
+    p[10][9] = 'X';
+}*/
+
+/****************** Gestao ******************
+Fluxos reais
+ ->(fornecedor) Produto (bens serviços)
+    -> clientes
+    -> fluxo monetário <- pagamento (€)
+-----------------------------------------------
+Fluxos financeiros
+receitas <- despesas
+(direito)   (obrigação)
+-----------------------------------------------
+Fluxos económicos
+rendimentos <-(balanço) gastos
+**********************************************/
+/****************** Exercício ******************
+Titulo                  quantia
+cofre                   20€
+bicicleta nova          120€
+divida avo              50€
+dinheiro                20€
+divida primo            30€
+
+ bens e direitos(ativo)/obrigações (passivo)
+ cofre          20     /divida avo 50€
+ bicicleta nova 120    /
+ divida primo   30     /
+ dinheiro       20     /
+ Total=190             /Total=50
+
+ CP(capital propria) = 140
+
+ **********************************************/
+//CP(capital propria) = a(ativo) - p(passivo)
+//CP = ativo - passivo

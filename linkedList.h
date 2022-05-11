@@ -1,5 +1,5 @@
-// Trabalho Pratico Programacao - LEI
-// DEIS-ISEC 2021-2022
+// By: Sérgio Apolinário da Costa (a2020129026),
+// On: 09/04/2022
 
 #ifndef LINKEDLIST_H
 #define LINKEDLIST_H
@@ -10,6 +10,7 @@
 //Guarda numa lista ligada a última jogada
 pMoves newMove(pMoves move, char **board, int x, int y, int realX, int realY);
 
-void getLastMove(pMoves move, int *x, int *y);
+//Guarda em x e y os valores introduzidos na última jogada
+void getLastMove(pMoves move, int *x, int *y, int *lastMove);
 
 #endif

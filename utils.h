@@ -1,15 +1,16 @@
-// Trabalho Pratico Programacao - LEI
-// DEIS-ISEC 2021-2022
+// By: Sérgio Apolinário da Costa (a2020129026),
+// On: 09/04/2022
 
 #ifndef UTILS_H
 #define UTILS_H
 
+#include <stdlib.h>
+#include <time.h>
 
-// Inicializa o gerador de numeros aleatorios.
-// Esta funcao deve ser chamada apenas uma vez no inicio da execucao do programa
+//Inicializa o gerador de números aleatórios. Esta função apenas deve ser chamada uma vez no início da execução do programa
 void initRandom();
 
-//Devolve um valor inteiro aleatorio distribuido uniformemente entre [a, b]
+//Devolve um valor inteiro aleatório distribuído uniformemente entre [a,b]
 int intUniformRnd(int a, int b);
 
 // Devolve o valor 1 com probabilidade prob. Caso contrario, devolve 0
