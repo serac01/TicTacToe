@@ -4,6 +4,12 @@
 CMakeFiles/TicTacToe.dir/board.c.obj: \
  ../board.c \
  ../board.h
+CMakeFiles/TicTacToe.dir/file.c.obj: \
+ ../board.h \
+ ../file.c \
+ ../file.h \
+ ../linkedList.h \
+ ../structs.h
 CMakeFiles/TicTacToe.dir/interface.c.obj: \
  ../board.h \
  ../interface.c \
@@ -17,6 +23,7 @@ CMakeFiles/TicTacToe.dir/linkedList.c.obj: \
  ../structs.h
 CMakeFiles/TicTacToe.dir/main.c.obj: \
  ../board.h \
+ ../file.h \
  ../interface.h \
  ../linkedList.h \
  ../main.c \

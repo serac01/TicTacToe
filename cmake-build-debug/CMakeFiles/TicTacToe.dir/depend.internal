@@ -4,6 +4,12 @@
 CMakeFiles/TicTacToe.dir/board.c.obj
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/board.c
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/board.h
+CMakeFiles/TicTacToe.dir/file.c.obj
+ C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/board.h
+ C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.c
+ C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.h
+ C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/linkedList.h
+ C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/structs.h
 CMakeFiles/TicTacToe.dir/interface.c.obj
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/board.h
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/interface.c
@@ -17,6 +23,7 @@ CMakeFiles/TicTacToe.dir/linkedList.c.obj
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/structs.h
 CMakeFiles/TicTacToe.dir/main.c.obj
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/board.h
+ C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.h
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/interface.h
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/linkedList.h
  C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/main.c

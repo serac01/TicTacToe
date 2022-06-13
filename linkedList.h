@@ -13,4 +13,6 @@ pMoves newMove(pMoves move, char **board, int x, int y, int realX, int realY);
 //Guarda em x e y os valores introduzidos na última jogada
 void getLastMove(pMoves move, int *x, int *y, int *lastMove);
 
+void freeList(pMoves move);
+
 #endif

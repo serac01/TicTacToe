@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/TicTacToe.dir/board.c.obj"
+  "CMakeFiles/TicTacToe.dir/file.c.obj"
   "CMakeFiles/TicTacToe.dir/interface.c.obj"
   "CMakeFiles/TicTacToe.dir/linkedList.c.obj"
   "CMakeFiles/TicTacToe.dir/main.c.obj"

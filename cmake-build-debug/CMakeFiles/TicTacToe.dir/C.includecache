@@ -12,27 +12,29 @@ stdlib.h
 stdio.h
 -
 
-C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/interface.c
-interface.h
-C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/interface.h
+C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.c
+file.h
+C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.h
 
-C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/interface.h
-string.h
+C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.h
+stdio.h
+-
+stdlib.h
 -
 string.h
 -
-structs.h
-C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/structs.h
-utils.h
-C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/utils.h
+linkedList.h
+C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/linkedList.h
+
+C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/linkedList.h
 board.h
 C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/board.h
+structs.h
+C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/structs.h
 
 C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/structs.h
 stdlib.h
 -
 stdio.h
 -
-
-C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/utils.h
 

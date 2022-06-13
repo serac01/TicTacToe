@@ -3,8 +3,9 @@
 
 #include "linkedList.h"
 
-pMoves newMove(pMoves move, char **board, int x, int y, int realX, int realY){
+pMoves newMove(pMoves move, char **board, int x, int y, int bigX, int bigY){
     pMoves new, aux=move;
+    int realX=SIZE*bigX+bigX+x, realY=SIZE*bigY+bigY+y;
 
     //Alocar memoria para conseguir guardar mais uma jogada
     new = malloc(sizeof(moves));
@@ -22,6 +23,8 @@ pMoves newMove(pMoves move, char **board, int x, int y, int realX, int realY){
 
     new->x=x;
     new->y=y;
+    new->bigX=bigX;
+    new->bigY=bigY;
     new->next=NULL;
 
     //Coloca na matriz a jogada que o utilizador pediu, consoante a ordem de jogada
@@ -53,11 +56,11 @@ void getLastMove(pMoves move, int *x, int *y, int *lastMove){
         *x=*y=*lastMove=0;
 }
 
-/*void showMeTheList(pMoves list){
-    printf("\n\n\n");
-    while(list->next!=NULL){
-        printf("\tX:%d Y:%d Number:%d\n",list->x,list->y,list->moveNumber);
-        list=list->next;
+void freeList(pMoves move){
+    pMoves aux;
+    while(move!=NULL){
+        aux=move;
+        move=move->next;
+        free(aux);
     }
-    printf("\tX:%d Y:%d Number:%d\n",list->x,list->y,list->moveNumber);
-}*/
+}

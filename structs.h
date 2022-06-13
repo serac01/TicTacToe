@@ -8,15 +8,17 @@
 #include <stdio.h>
 
 //Estrutura do jogador
-typedef struct player{
+typedef struct player Players, *pPlayers;
+struct player{
     char name[30];
     int number;
-}Players;
+    int isComputer;
+};
 
 //Estrutura da jogada, usado nas listas ligadas
 typedef struct allMoves moves, *pMoves;
 struct allMoves {
-    int x,y,moveNumber;
+    int x,y,bigX,bigY,moveNumber;
     pMoves next;
 };
 
