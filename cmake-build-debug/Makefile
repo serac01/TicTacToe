@@ -152,6 +152,30 @@ board.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/board.c.s
 .PHONY : board.c.s
 
+file.obj: file.c.obj
+.PHONY : file.obj
+
+# target to build an object file
+file.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/file.c.obj
+.PHONY : file.c.obj
+
+file.i: file.c.i
+.PHONY : file.i
+
+# target to preprocess a source file
+file.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/file.c.i
+.PHONY : file.c.i
+
+file.s: file.c.s
+.PHONY : file.s
+
+# target to generate assembly for a file
+file.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TicTacToe.dir\build.make CMakeFiles/TicTacToe.dir/file.c.s
+.PHONY : file.c.s
+
 interface.obj: interface.c.obj
 .PHONY : interface.obj
 
@@ -260,6 +284,9 @@ help:
 	@echo ... board.obj
 	@echo ... board.i
 	@echo ... board.s
+	@echo ... file.obj
+	@echo ... file.i
+	@echo ... file.s
 	@echo ... interface.obj
 	@echo ... interface.i
 	@echo ... interface.s

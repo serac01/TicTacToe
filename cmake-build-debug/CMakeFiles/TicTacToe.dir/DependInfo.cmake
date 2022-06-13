@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
   "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/board.c" "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/board.c.obj"
+  "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.c" "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/file.c.obj"
   "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/interface.c" "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/interface.c.obj"
   "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/linkedList.c" "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/linkedList.c.obj"
   "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/main.c" "C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/cmake-build-debug/CMakeFiles/TicTacToe.dir/main.c.obj"

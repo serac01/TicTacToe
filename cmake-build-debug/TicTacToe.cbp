@@ -82,6 +82,12 @@
 		<Unit filename="C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/board.h">
 			<Option target="TicTacToe"/>
 		</Unit>
+		<Unit filename="C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.c">
+			<Option target="TicTacToe"/>
+		</Unit>
+		<Unit filename="C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/file.h">
+			<Option target="TicTacToe"/>
+		</Unit>
 		<Unit filename="C:/Users/serco/Desktop/A Minha Universidade/P/TicTacToe/interface.c">
 			<Option target="TicTacToe"/>
 		</Unit>
