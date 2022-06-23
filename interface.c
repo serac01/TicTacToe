@@ -7,6 +7,8 @@ pPlayers start(pPlayers player){
     char option;
 
     player = malloc(2*sizeof(Players));
+    if(player==NULL)
+        return NULL;
 
     printf("\n\n\t\tWelcome! Do you want to play?\n\tTell me your name: ");
     fflush(stdin);

@@ -15,9 +15,10 @@ pMoves readInterruptedGame(pMoves moves, char **board);
 //Recupera os jogadores baseado num ficheiro onde está guardado um jogo interrompido
 pPlayers recoverPlayers(pPlayers player);
 
-//Guarda num ficheiro as informações necessarias para poder retomar o jogo
+//Guarda num ficheiro as informações necessárias para poder retomar o jogo
 void saveInterruptedGame(pMoves moves, pPlayers players);
 
+//Guarda num ficheiro de texto os movimentos feitos pelos jogadores de um jogo já acabado
 void saveFinishedGame(pMoves moves, pPlayers players, char *filename);
 
 #endif /*FILE_H*/
