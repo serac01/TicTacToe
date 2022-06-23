@@ -15,7 +15,7 @@ struct player{
     int isComputer;
 };
 
-//Estrutura da jogada, usado nas listas ligadas
+//Estrutura da jogada, usado na lista
 typedef struct allMoves moves, *pMoves;
 struct allMoves {
     int x,y,bigX,bigY,moveNumber;

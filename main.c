@@ -20,7 +20,15 @@ int main() {
     //Se for detetado um ficheiro
     if(wantToRecoverGame()) {
         players = recoverPlayers(players);
+        if(board==NULL || players==NULL) {
+            printf("\n\t[ERROR]: Couldn't allocate memory (Malloc Failed)");
+            return 0;
+        }
         moves = readInterruptedGame(moves, board);
+        if(moves==NULL) {
+            printf("\n\t[ERROR]: Couldn't read the file");
+            return 0;
+        }
         //Para o menu receber o lastMove atualizado
         getLastMove(moves,&bigX,&bigY,&lastMove);
         //É preciso voltar uma casa atras, onde foi a última jogada do próximo jogador
@@ -30,14 +38,13 @@ int main() {
     else{
         //Cria os dois jogadores (Humano e Humano/Computador)
         players=start(players);
-
-        if(board==NULL) {
+        if(board==NULL || players==NULL) {
             printf("\n\t[ERROR]: Couldn't allocate memory (Malloc Failed)");
             return 0;
         }
     }
 
-
+    //Executa as funções em ciclo ate se verificar uma vitória, empate ou desistência
     do{
         switch(menu(players, lastMove)){
             case 1:
@@ -62,17 +69,18 @@ int main() {
         }
     }while(quit==0);
 
-
     if(quit==6)
         saveInterruptedGame(moves,players);
     else {
-        showTheWinnerAndAskFile(players,++lastMove, filename);
+        showTheWinnerAndAskFile(players,++lastMove, filename, quit);
         saveFinishedGame(moves, players, filename);
     }
 
+    //Libertar a memória alocada durante a execução do programa
     freeBoard(board,SIZE);
     freeList(moves);
-    //freePlayers();
+    free((players+1));
+    free(players);
 
     return 0;
 }

@@ -28,8 +28,10 @@ int menu(pPlayers players, int lastMove);
 //Apresentar a quantidade de jogadas que o utilizador quer (max: 10)
 void showNPreviousPlays(pMoves moves, pPlayers players);
 
+//Verifica se tem um ficheiro com o jogo guardado, se sim pergunta ao utilizador se o quer retomar
 int wantToRecoverGame();
 
+//Informa os jogadores do fim do jogo e pergunta se o nome do ficheiro a guardar as jogadas
 void showTheWinnerAndAskFile(pPlayers players, int lastMove, char *filename, int itsATie);
 
 #endif /*INTERFACE_H*/

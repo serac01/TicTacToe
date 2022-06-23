@@ -3,24 +3,10 @@
 
 #include "file.h"
 
-/*void mostraConteudo(char *nome){
-    FILE *f;
-    char str[100];
-
-    f=fopen(nome,"rt");
-    if(f==NULL){
-        printf("\n\tErro a abrir ficheiro");
-        return;
-    }
-    while(fscanf(f," %[^\n]",str)==1)
-        printf("\n\t%s",str);
-    fclose(f);
-}*/
-
 pMoves readInterruptedGame(pMoves moves, char **board){
     int moveNumber,bigX,bigY,x,y, t1,t2;
     char name[50];
-    //Read file
+
     FILE* d = fopen("jogo.bin", "rb");
     if (d == NULL)
         return NULL;
@@ -29,7 +15,7 @@ pMoves readInterruptedGame(pMoves moves, char **board){
     fscanf(d, "%d %d %[^\n]%*c\n", &t1, &t2, name);
     while (!feof (d)){
         fscanf(d, "%d %d %d %d %d\n", &moveNumber, &bigX, &bigY, &x, &y);
-        moves= newMove(moves,board,x,y,bigX,bigY);
+        moves = newMove(moves,board,x,y,bigX,bigY);
     }
     fclose (d);
     return moves;
@@ -40,13 +26,17 @@ pPlayers recoverPlayers(pPlayers player){
     char name1[50], name2[50];
 
     player = malloc(2*sizeof(Players));
-    //Read file
+    if(player==NULL)
+        return NULL;
+
     FILE* d = fopen("jogo.bin", "rb");
     if (d == NULL)
         return NULL;
 
     fscanf(d, "%d %d %[^\n]%*c\n", &whoIsFirst1, &isComputer1, name1);
     fscanf(d, "%d %d %[^\n]%*c\n", &whoIsFirst2, &isComputer2, name2);
+    name1[strlen(name1)-1]='\0';
+    name2[strlen(name2)-1]='\0';
 
     strcpy(player->name,name1);
     strcpy((player+1)->name,name2);
